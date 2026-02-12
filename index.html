@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="google-site-verification" content="fXaND5JuEqr4Evq-GNOq1s3tgNyCeOg78g2Su4KdiHA" />
-<title>시험 목표 점수 계산기</title>
+
+<title>시험 목표 점수 계산기 | 평균 점수 계산 | 성적 목표 계산</title>
+
+<meta name="description" content="현재 평균 점수와 목표 점수를 입력하면 남은 시험에서 필요한 평균 점수를 계산해주는 시험 목표 점수 계산기입니다. 내신 관리와 시험 계획 수립에 도움을 줍니다.">
+
+<meta name="keywords" content="시험 점수 계산기, 평균 점수 계산, 목표 점수 계산, 성적 계산기, 내신 계산기">
+
+<link rel="canonical" href="https://exam-calculator.vercel.app/">
+
+<meta property="og:title" content="시험 목표 점수 계산기">
+<meta property="og:description" content="남은 시험에서 필요한 평균 점수를 계산해보세요.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://exam-calculator.vercel.app/">
 
 <style>
 body {
@@ -97,6 +110,12 @@ td, th {
     text-align: center;
 }
 
+.info-section {
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
 @media (max-width: 900px) {
     .layout { grid-template-columns: 1fr; }
     .ad { display: none; }
@@ -104,21 +123,21 @@ td, th {
 }
 </style>
 </head>
+
 <body>
 
 <div class="layout">
 
 <div class="ad">
-    <script>
-    atOptions = {
-        'key' : '0418c0cc8fa4919ab662dc0156165842',
-        'format' : 'iframe',
-        'height' : 600,
-        'width' : 160,
-        'params' : {}
-    };
-    </script>
-    <script src="https://www.highperformanceformat.com/0418c0cc8fa4919ab662dc0156165842/invoke.js"></script>
+<script>
+atOptions = {
+    'key' : '0418c0cc8fa4919ab662dc0156165842',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160
+};
+</script>
+<script src="https://www.highperformanceformat.com/0418c0cc8fa4919ab662dc0156165842/invoke.js"></script>
 </div>
 
 <div class="container">
@@ -152,20 +171,42 @@ td, th {
 <p id="result"></p>
 <div id="cases"></div>
 
+<section class="info-section">
+<h2>시험 목표 점수 계산기란?</h2>
+<p>
+이 계산기는 현재 평균 점수와 목표 점수를 기준으로 남은 시험에서 필요한 평균 점수를 계산해주는 도구입니다.
+학생들이 시험 성적 목표를 계획하고 학습 전략을 세우는 데 도움을 줍니다.
+</p>
+
+<h2>사용 방법</h2>
+<ul>
+<li>현재 평균 점수를 입력합니다.</li>
+<li>목표 평균 점수를 입력합니다.</li>
+<li>남은 시험 횟수를 입력합니다.</li>
+<li>계산 버튼을 누르면 필요한 점수를 확인할 수 있습니다.</li>
+</ul>
+
+<h2>자주 묻는 질문</h2>
+<p><strong>Q. 시험을 아직 보지 않았으면 어떻게 하나요?</strong><br>
+시험 본 적 없음 체크를 선택하면 목표 점수를 그대로 계산합니다.</p>
+
+<p><strong>Q. 목표 점수가 불가능하게 나오면?</strong><br>
+남은 시험 점수로 목표 달성이 어려운 상황입니다.</p>
+</section>
+
 </form>
 </div>
 
 <div class="ad">
-    <script>
-    atOptions = {
-        'key' : '0418c0cc8fa4919ab662dc0156165842',
-        'format' : 'iframe',
-        'height' : 600,
-        'width' : 160,
-        'params' : {}
-    };
-    </script>
-    <script src="https://www.highperformanceformat.com/0418c0cc8fa4919ab662dc0156165842/invoke.js"></script>
+<script>
+atOptions = {
+    'key' : '0418c0cc8fa4919ab662dc0156165842',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160
+};
+</script>
+<script src="https://www.highperformanceformat.com/0418c0cc8fa4919ab662dc0156165842/invoke.js"></script>
 </div>
 
 </div>
@@ -209,7 +250,6 @@ document.getElementById("restTests").addEventListener("blur",normalizeInputs);
 
 function buildCases(rest,needed){
     const total=needed*rest;
-
     let maxArr=[];
     let remain=total;
 
@@ -220,7 +260,6 @@ function buildCases(rest,needed){
     }
 
     let minArr=new Array(rest).fill(Math.round(needed*100)/100);
-
     return {maxArr,minArr};
 }
 
@@ -243,7 +282,6 @@ function renderTable(rest,maxArr,minArr){
     html+="</tr>";
 
     html+="</table>";
-
     return html;
 }
 
@@ -289,4 +327,3 @@ function calculate(e){
 
 </body>
 </html>
-
